@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+
+    </style>
+    <title>Questionario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="tarefa1">
+        <h1>Tarefa 1</h1>
+        <p><strong>R:</strong> O uso de JavaScript em aplicações frontend tem como objetivo principal tornar as páginas
+            web interativas e dinâmicas. </p>
+
+    </div>
+
+    <hr>
+
+    <div class="tarefa2">
+        <h1>Tarefa 2</h1>
+        <img src="images/noticia-falsa.png" alt="">
+
+    </div>
+
+    <hr>
+
+    <div class="tarefa3">
+        <h1>Tarefa 3</h1>
+        <h2 id="texto3">Não recomendo fazer o L.</h2>
+        <button id="botao3">Fazer o L</button>
+
+        <script>
+            document.getElementById("botao3").onclick = function () {
+                document.getElementById("texto3").innerText = "Você fez o L!!";
+                document.getElementById("texto3").style.color = "blue"
+                document.getElementById("texto3").style.fontSize = "50px"
+                document.getElementById("botao3").style.display = "none";
+
+            };
+        </script>
+    </div>
+
+    <hr>
+
+    <div class="tarefa4">
+        <h1>Tarefa4</h1>
+        <h2 id="contadorEneas"></h2>
+        <h2 id="contadorLula"></h2>
+        <h2 id="contadorBolsonaro"></h2>
+        <button id="botaoCliqueEneas">Eneas</button>
+        <button id="botaoCliqueLula">Lula</button>
+        <button id="botaoCliqueBolsonaro">Bolsonaro</button>
+
+        <script>
+            // Variável que armazena o número de cliques
+            let votosEneas = 0;
+            let votosLula = 0;
+            let votosBolsonaro = 0;
+
+            // Função que é executada ao clicar no botão
+            document.getElementById("botaoCliqueEneas").onclick = function () {
+                votosEneas++;
+                document.getElementById("contadorEneas").innerText = "Votos Eneas: " + votosEneas;
+            };
+
+            document.getElementById("botaoCliqueLula").onclick = function () {
+                votosLula++;
+
+                // Atualiza o texto com o novo valor do contador
+                document.getElementById("contadorLula").innerText = "Votos Lula: " + votosLula;
+            };
+
+            document.getElementById("botaoCliqueBolsonaro").onclick = function () {
+                // Incrementa o número de cliques
+                votosBolsonaro++;
+
+                // Atualiza o texto com o novo valor do contador
+                document.getElementById("contadorBolsonaro").innerText = "Votos Bolsonaro: " + votosBolsonaro;
+            };
+        </script>
+    </div>
+
+    <hr>
+
+    <div class="tarefa5">
+        <h1>Tarefa 5</h1>
+        <div class="listas">
+            <ul id="lista">
+
+            </ul>
+
+            <button id="adicionar">Adicionar</button>
+            <button id="limpar">Limpar Lista</button>
+
+        </div>
+
+        <script>
+            let num = 0;
+
+            function adicionarItem() {
+                item = document.createElement("li");
+                item.textContent = num++;
+
+                lista = document.getElementById("lista");
+                lista.appendChild(item);
+            }
+
+            function limparLista() {
+                lista = document.getElementById("lista");
+                lista.innerHTML = '';
+            }
+
+            document.getElementById("adicionar").addEventListener("click", adicionarItem);
+            document.getElementById("limpar").addEventListener("click", limparLista);
+        </script>
+
+    </div>
+
+    <hr>
+    <h1>Tarefa 6</h1>
+    <div class="tarefa6">
+
+        <button id="gerarNome">Gerar Nome</button>
+        <div class="caixaNome">
+            <h2 id="nome">Salvador Jesus, Deus do Mundo</h2>
+        </div>
+        <script>
+            function sortearNumero(max) {
+                return parseInt(Math.random() * max);
+            }
+
+            const titles = ["Sr.", "Mister", "Dom", "Lord", "Lady", "Capitão", "Dama"];
+            const names = ["Arthur", "Gwendolyn", "Merlin", "Lancelot", "Morgana", "Ragnar", "Éowyn"];
+            const classes = ["Mago", "Paladino", "Arqueiro", "Ladino", "Bárbaro", "Feiticeiro", "Cavaleiro", "Apostolo"];
+            const locations = ["Valfenda", "Gondor", "Asgard", "Camelot", "Nárnia", "Babilônia", "Atlantis"];
+
+
+
+            document.getElementById("gerarNome").onclick = function () {
+                const numeroTitles = sortearNumero(7);
+                const numeroNames = sortearNumero(7);
+                const numeroClasses = sortearNumero(8);
+                const numeroLocations = sortearNumero(7);
+                document.getElementById("nome").innerText = titles[numeroTitles] + " " + names[numeroNames] + ", " + classes[numeroClasses] + " de " + locations[numeroLocations];
+            };
+
+        </script>
+    </div>
+
+    <hr>
+
+    <div class="tarefa7">
+        <h1>Tarefa 7</h1>
+        <img id="imagem7"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.iTn8vLnR7-_1UqXewb6ntQHaFj%26pid%3DApi&f=1&ipt=e40f86ef770d5ba2a176e0d75f897f753b0aaac94ca8d5cb9b094761fdfc37b1&ipo=images"
+            alt="">
+        <h2 id="falas7">Olá, eu sou o coragem!</h2>
+
+        <script>
+            const imagem = document.getElementById("imagem7");
+            const falas = document.getElementById("falas7");
+
+            imagem.addEventListener('mouseenter', () => {
+                falas.textContent = "Muriel!!"
+            });
+
+            imagem.addEventListener("mouseleave", () => {
+                falas.textContent = "Corre Muriel!!"
+            });
+
+            imagem.addEventListener("mousemove", () => {
+                falas.textContent = "Não bata no coragem, Eustacio."
+            });
+
+            imagem.addEventListener("click", () => {
+                falas.textContent = "Abre a porta, Coragem."
+            });
+        </script>
+    </div>
+
+    <hr>
+
+    <div class="tarefa8">
+        <h1>Tarefa 8</h1>
+        <h2>Digite o sabor do sorvete</h2>
+        <input type="text" id="sabor" placeholder="Digite o sabor...">
+        <div class="resultado" id="resultado"></div>
+
+        <script>
+            const inputSabor = document.getElementById('sabor');
+            const resultadoDiv = document.getElementById('resultado');
+
+            inputSabor.addEventListener('input', () => {
+                const sabor = inputSabor.value.trim();
+
+                // Verifica a quantidade de letras
+                if (sabor.length > 3) {
+                    if (sabor.toLowerCase() === "chocolate") {
+                        resultadoDiv.textContent = "Eu amo sorvete de chocolate!";
+                    } else if (sabor.toLowerCase() === "flocos") {
+                        resultadoDiv.textContent = "Ahh, mas chocolate é o meu favorito...";
+                    } else {
+                        resultadoDiv.textContent = "Ahh, eu esperava um sabor de sorvete...";
+                    }
+                } else {
+                    resultadoDiv.textContent = ""; // Limpa o resultado se menos de 3 letras
+                }
+            });
+        </script>
+    </div>
+
+    <hr>
+
+    <div class="tarefa9">
+
+        <h1>Tarefa 9</h1>
+        <button id="alternar">Ativar Modo Claro</button>
+
+
+        <script>
+            const alternar = document.getElementById("alternar");
+            let darkMode = false;
+
+            alternar.addEventListener('click', () => {
+                darkMode = !darkMode;
+                document.body.classList.toggle('dark-mode', darkMode);
+                alternar.textContent = darkMode ? "Desligar Modo Claro" : "Ativar Modo Claro";
+            });
+        </script>
+    </div>
+
+    <hr>
+
+    <div class="tarefa10">
+        <h1>Tarefa 10</h1>
+        <h2>Cadastro</h2>
+        <form class="cadastro" id="formCadastro" onsubmit="return validarFormulario()">
+            <p>Nome:</p>
+            <input type="text" id="nome"><br>
+
+            <p>Email: </p>
+            <input type="email" id="email"><br>
+
+            <p>Senha: </p>
+            <input type="password" id="senha" name="senha" required>
+            <button type="button" onclick="toggleSenha()">Mostrar</button><br>
+
+            <p>Confirmação de Senha: </p>
+            <input type="password" id="confirmarSenha"><br>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <script>
+            const emailconfirm = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const senhaconfirm = /^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+            function validarFormulario() {
+                const nome = document.getElementById('nome').value;
+                const email = document.getElementById('email').value;
+                const senha = document.getElementById('senha').value;
+                const confirmarSenha = document.getElementById('confirmarSenha').value;
+
+                if (nome.length < 3) {
+                    alert('O nome deve ter pelo menos 3 caracteres.');
+                    return false;
+                }
+
+                if (!emailconfirm.test(email)) {
+                    alert('E-mail inválido.');
+                    return false;
+                }
+
+                if (!senhaconfirm.test(senha)) {
+                    alert('A senha deve ter no mínimo 8 caracteres, incluindo uma letra maiúscula, um número e um caractere especial.');
+                    return false;
+                }
+
+                if (senha !== confirmarSenha) {
+                    alert('A senha e a confirmação de senha devem ser idênticas.');
+                    return false;
+                }
+
+                alert('Cadastro realizado com sucesso!');
+                return true;
+            }
+
+            function toggleSenha() {
+                const senhaInput = document.getElementById('senha');
+                senhaInput.type = senhaInput.type === 'password' ? 'text' : 'password';
+            }
+        </script>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

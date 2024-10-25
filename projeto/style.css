@@ -1,0 +1,42 @@
+.tarefa5 {
+    display: flex;
+    flex-direction: column; 
+}
+
+.listas{
+    display: flex;
+    padding: 10px;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+* {
+    background-color: black;
+    /* Cor de fundo padrão para modo escuro */
+    color: white;
+    /* Cor do texto padrão para modo escuro */
+    transition: background-color 0.3s, color 0.3s;
+    /* Transição suave */
+}
+
+.dark-mode {
+    background-color: white;
+    /* Cor de fundo para modo claro */
+    color: black;
+    /* Cor do texto para modo claro */
+}
+
+.tarefa6 {
+    display: flex;
+}
+
+.caixaNome {
+    border: 2px solid white;
+}
+
+button {
+    border: 1px solid white;
+}
